@@ -1,0 +1,950 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "FSharp.Core/10.0.101": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FSharp.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/FSharp.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/netstandard2.1/cs/FSharp.Core.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.1/de/FSharp.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.1/es/FSharp.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.1/fr/FSharp.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.1/it/FSharp.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.1/ja/FSharp.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.1/ko/FSharp.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.1/pl/FSharp.Core.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.1/pt-BR/FSharp.Core.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.1/ru/FSharp.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.1/tr/FSharp.Core.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.12.4": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
+      "System.Reflection.Emit.Lightweight/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Text.Json/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "WebSharper/10.1.0.667": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "6.0.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/WebSharper.Core.JavaScript.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.Core.dll": {
+            "related": ".JavaScript.xml;.xml"
+          },
+          "lib/netstandard2.0/WebSharper.InterfaceGenerator.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.JavaScript.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.Sitelets.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.StdLib.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebSharper.Core.JavaScript.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.Core.dll": {
+            "related": ".JavaScript.xml;.xml"
+          },
+          "lib/netstandard2.0/WebSharper.InterfaceGenerator.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.JavaScript.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.Sitelets.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.StdLib.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.Web.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "WebSharper.AspNetCore/10.1.0.667": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "5.0.0",
+          "WebSharper": "[10.1.0.667]"
+        },
+        "compile": {
+          "lib/netstandard2.0/WebSharper.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebSharper.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "WebSharper.FSharp/10.1.0.667": {
+        "type": "package",
+        "dependencies": {
+          "WebSharper": "[10.1.0.667]"
+        },
+        "build": {
+          "build/WebSharper.FSharp.targets": {}
+        }
+      },
+      "WebSharper.UI/10.1.0.667": {
+        "type": "package",
+        "dependencies": {
+          "HtmlAgilityPack": "1.12.4",
+          "WebSharper": "[10.1.0.667, 10.1.1)"
+        },
+        "compile": {
+          "lib/netstandard2.0/WebSharper.UI.Templating.Common.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.UI.Templating.Runtime.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.UI.dll": {
+            "related": ".Templating.Common.xml;.Templating.Runtime.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebSharper.UI.Templating.Common.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.UI.Templating.Runtime.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/WebSharper.UI.dll": {
+            "related": ".Templating.Common.xml;.Templating.Runtime.xml;.xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FSharp.Core/10.0.101": {
+      "sha512": "mrS3J7cLtvXM3u3CmiaFq8oyBdlevzZY1VAAAbFk1gUDQtDEjUOybN5XpQglx5wAgJ0wLdDl6OSSfS7ZDFNcpA==",
+      "type": "package",
+      "path": "fsharp.core/10.0.101",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "fsharp.core.10.0.101.nupkg.sha512",
+        "fsharp.core.nuspec",
+        "lib/netstandard2.0/FSharp.Core.dll",
+        "lib/netstandard2.0/FSharp.Core.xml",
+        "lib/netstandard2.0/cs/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/de/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/es/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/fr/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/it/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ja/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ko/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/pl/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/ru/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
+        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/FSharp.Core.dll",
+        "lib/netstandard2.1/FSharp.Core.xml",
+        "lib/netstandard2.1/cs/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/de/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/es/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/fr/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/it/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/ja/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/ko/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/pl/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/pt-BR/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/ru/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/tr/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "HtmlAgilityPack/1.12.4": {
+      "sha512": "ljqvBabvFwKoLniuoQKO8b5bJfJweKLs4fUNS/V5dsvpo0A8MlJqxxn9XVmP2DaskbUXty6IYaWAi1SArGIMeQ==",
+      "type": "package",
+      "path": "htmlagilitypack/1.12.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "htmlagilitypack.1.12.4.nupkg.sha512",
+        "htmlagilitypack.nuspec",
+        "lib/Net35/HtmlAgilityPack.dll",
+        "lib/Net35/HtmlAgilityPack.pdb",
+        "lib/Net35/HtmlAgilityPack.xml",
+        "lib/Net40-client/HtmlAgilityPack.dll",
+        "lib/Net40-client/HtmlAgilityPack.pdb",
+        "lib/Net40-client/HtmlAgilityPack.xml",
+        "lib/Net40/HtmlAgilityPack.XML",
+        "lib/Net40/HtmlAgilityPack.dll",
+        "lib/Net40/HtmlAgilityPack.pdb",
+        "lib/Net45/HtmlAgilityPack.XML",
+        "lib/Net45/HtmlAgilityPack.dll",
+        "lib/Net45/HtmlAgilityPack.pdb",
+        "lib/NetCore45/HtmlAgilityPack.XML",
+        "lib/NetCore45/HtmlAgilityPack.dll",
+        "lib/NetCore45/HtmlAgilityPack.pdb",
+        "lib/net7.0/HtmlAgilityPack.deps.json",
+        "lib/net7.0/HtmlAgilityPack.dll",
+        "lib/net7.0/HtmlAgilityPack.pdb",
+        "lib/net7.0/HtmlAgilityPack.xml",
+        "lib/netstandard2.0/HtmlAgilityPack.deps.json",
+        "lib/netstandard2.0/HtmlAgilityPack.dll",
+        "lib/netstandard2.0/HtmlAgilityPack.pdb",
+        "lib/netstandard2.0/HtmlAgilityPack.xml",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.XML",
+        "lib/uap10.0/HtmlAgilityPack.dll",
+        "lib/uap10.0/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.pri",
+        "readme.md"
+      ]
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "sha512": "a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "type": "package",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard2.1/_._",
+        "lib/portable-net45+wp8/_._",
+        "lib/wp80/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/de/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/es/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/fr/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/it/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ja/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ko/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ru/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.1/_._",
+        "ref/portable-net45+wp8/_._",
+        "ref/wp80/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.xml",
+        "system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+        "system.reflection.emit.lightweight.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Json/5.0.0": {
+      "sha512": "+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
+      "type": "package",
+      "path": "system.text.json/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.5.0.0.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "WebSharper/10.1.0.667": {
+      "sha512": "fUk/O+3VhsJ4bU1987aGN6t57i4tfFqLnw7Z/ktz4YXy6/N9NZd29qdleMbt4tjJjV5oiuY+LE6NcJ0cJq67Fg==",
+      "type": "package",
+      "path": "websharper/10.1.0.667",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "docs/CSharpIntro.md",
+        "docs/CompilerSettings.md",
+        "docs/DOM.md",
+        "docs/ECMA-262.md",
+        "docs/IIS.md",
+        "docs/Libraries.md",
+        "docs/MSBuild.md",
+        "docs/Macros.md",
+        "docs/TypeScriptDeclarations.md",
+        "docs/WebApi.md",
+        "docs/WebSharper.md",
+        "docs/WebSharper4Beta.md",
+        "docs/WebSharper8Translation.md",
+        "docs/WebSharper8UpgradeGuide.md",
+        "docs/dep-form-ex.png",
+        "docs/dep-form.png",
+        "docs/doc.fsx",
+        "docs/enhance-form.png",
+        "docs/jQuery.md",
+        "docs/label-form.png",
+        "docs/person-form-ex.png",
+        "docs/qunit.png",
+        "docs/release-notes/10.0.0.md",
+        "docs/release-notes/10.1.0.md",
+        "docs/static-comp-form.png",
+        "docs/validation-form.png",
+        "docs/w3c.md",
+        "lib/netstandard2.0/WebSharper.Core.JavaScript.dll",
+        "lib/netstandard2.0/WebSharper.Core.JavaScript.xml",
+        "lib/netstandard2.0/WebSharper.Core.dll",
+        "lib/netstandard2.0/WebSharper.Core.xml",
+        "lib/netstandard2.0/WebSharper.InterfaceGenerator.dll",
+        "lib/netstandard2.0/WebSharper.InterfaceGenerator.xml",
+        "lib/netstandard2.0/WebSharper.JavaScript.dll",
+        "lib/netstandard2.0/WebSharper.JavaScript.xml",
+        "lib/netstandard2.0/WebSharper.Sitelets.dll",
+        "lib/netstandard2.0/WebSharper.Sitelets.xml",
+        "lib/netstandard2.0/WebSharper.StdLib.dll",
+        "lib/netstandard2.0/WebSharper.StdLib.xml",
+        "lib/netstandard2.0/WebSharper.Web.dll",
+        "lib/netstandard2.0/WebSharper.Web.xml",
+        "tools/tags.csv",
+        "websharper.10.1.0.667.nupkg.sha512",
+        "websharper.nuspec"
+      ]
+    },
+    "WebSharper.AspNetCore/10.1.0.667": {
+      "sha512": "/0jHPnVmJLCvr8li6YEjgYAng/Htjqw/uqtwiZnK3vdIOyIxmr5GLKnfwTej7iWVWONaYTVYl8bKRsKI8I/1fw==",
+      "type": "package",
+      "path": "websharper.aspnetcore/10.1.0.667",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/WebSharper.AspNetCore.dll",
+        "lib/netstandard2.0/WebSharper.AspNetCore.xml",
+        "websharper.aspnetcore.10.1.0.667.nupkg.sha512",
+        "websharper.aspnetcore.nuspec"
+      ]
+    },
+    "WebSharper.FSharp/10.1.0.667": {
+      "sha512": "Yjgo+5tPKUPqshw2xhEmBRQ3LfO2xATJx9/dv8q1YR7nQ8H9eKwtqSdFjYWwCdSzKGGRtew1xV+AAqBIKmwc2w==",
+      "type": "package",
+      "path": "websharper.fsharp/10.1.0.667",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/WebSharper.FSharp.targets",
+        "tools/net10.0/DiffPlex.dll",
+        "tools/net10.0/FSharp.Compiler.Service.dll",
+        "tools/net10.0/FSharp.Core.dll",
+        "tools/net10.0/FSharp.DependencyManager.Nuget.dll",
+        "tools/net10.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tools/net10.0/Mono.Cecil.Mdb.dll",
+        "tools/net10.0/Mono.Cecil.Pdb.dll",
+        "tools/net10.0/Mono.Cecil.Rocks.dll",
+        "tools/net10.0/Mono.Cecil.dll",
+        "tools/net10.0/NLog.config",
+        "tools/net10.0/NLog.dll",
+        "tools/net10.0/System.CodeDom.dll",
+        "tools/net10.0/System.Configuration.ConfigurationManager.dll",
+        "tools/net10.0/System.Diagnostics.EventLog.dll",
+        "tools/net10.0/System.Runtime.Caching.dll",
+        "tools/net10.0/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net10.0/WebSharper.Compiler.FSharp.dll",
+        "tools/net10.0/WebSharper.Compiler.dll",
+        "tools/net10.0/WebSharper.Core.JavaScript.dll",
+        "tools/net10.0/WebSharper.Core.dll",
+        "tools/net10.0/WebSharper.InterfaceGenerator.dll",
+        "tools/net10.0/WebSharper.Sitelets.Offline.dll",
+        "tools/net10.0/cs/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/cs/FSharp.Core.resources.dll",
+        "tools/net10.0/cs/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/de/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/de/FSharp.Core.resources.dll",
+        "tools/net10.0/de/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/default.win32manifest",
+        "tools/net10.0/es/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/es/FSharp.Core.resources.dll",
+        "tools/net10.0/es/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/fr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/fr/FSharp.Core.resources.dll",
+        "tools/net10.0/fr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/it/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/it/FSharp.Core.resources.dll",
+        "tools/net10.0/it/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/ja/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/ja/FSharp.Core.resources.dll",
+        "tools/net10.0/ja/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/ko/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/ko/FSharp.Core.resources.dll",
+        "tools/net10.0/ko/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/DiffPlex.dll",
+        "tools/net10.0/linux-musl-x64/FSharp.Compiler.Service.dll",
+        "tools/net10.0/linux-musl-x64/FSharp.Core.dll",
+        "tools/net10.0/linux-musl-x64/FSharp.DependencyManager.Nuget.dll",
+        "tools/net10.0/linux-musl-x64/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tools/net10.0/linux-musl-x64/Mono.Cecil.Mdb.dll",
+        "tools/net10.0/linux-musl-x64/Mono.Cecil.Pdb.dll",
+        "tools/net10.0/linux-musl-x64/Mono.Cecil.Rocks.dll",
+        "tools/net10.0/linux-musl-x64/Mono.Cecil.dll",
+        "tools/net10.0/linux-musl-x64/NLog.config",
+        "tools/net10.0/linux-musl-x64/NLog.dll",
+        "tools/net10.0/linux-musl-x64/System.CodeDom.dll",
+        "tools/net10.0/linux-musl-x64/System.Configuration.ConfigurationManager.dll",
+        "tools/net10.0/linux-musl-x64/System.Diagnostics.EventLog.dll",
+        "tools/net10.0/linux-musl-x64/System.Runtime.Caching.dll",
+        "tools/net10.0/linux-musl-x64/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net10.0/linux-musl-x64/WebSharper.Compiler.FSharp.dll",
+        "tools/net10.0/linux-musl-x64/WebSharper.Compiler.dll",
+        "tools/net10.0/linux-musl-x64/WebSharper.Core.JavaScript.dll",
+        "tools/net10.0/linux-musl-x64/WebSharper.Core.dll",
+        "tools/net10.0/linux-musl-x64/WebSharper.InterfaceGenerator.dll",
+        "tools/net10.0/linux-musl-x64/WebSharper.Sitelets.Offline.dll",
+        "tools/net10.0/linux-musl-x64/cs/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/cs/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/cs/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/de/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/de/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/de/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/default.win32manifest",
+        "tools/net10.0/linux-musl-x64/es/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/es/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/es/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/fr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/fr/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/fr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/it/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/it/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/it/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/ja/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/ja/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/ja/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/ko/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/ko/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/ko/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/pl/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/pl/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/pl/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/pt-BR/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/pt-BR/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/pt-BR/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/ru/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/ru/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/ru/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/tr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/tr/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/tr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/wsfsc",
+        "tools/net10.0/linux-musl-x64/wsfsc.dll",
+        "tools/net10.0/linux-musl-x64/wsfsc.dll.config",
+        "tools/net10.0/linux-musl-x64/wsfsc.runtimeconfig.json",
+        "tools/net10.0/linux-musl-x64/wsfsc.sh",
+        "tools/net10.0/linux-musl-x64/wsfscservice",
+        "tools/net10.0/linux-musl-x64/wsfscservice.dll",
+        "tools/net10.0/linux-musl-x64/wsfscservice.dll.config",
+        "tools/net10.0/linux-musl-x64/wsfscservice.runtimeconfig.json",
+        "tools/net10.0/linux-musl-x64/wsfscservice_start.sh",
+        "tools/net10.0/linux-musl-x64/zh-Hans/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/zh-Hans/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/zh-Hans/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-musl-x64/zh-Hant/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-musl-x64/zh-Hant/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-musl-x64/zh-Hant/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/DiffPlex.dll",
+        "tools/net10.0/linux-x64/FSharp.Compiler.Service.dll",
+        "tools/net10.0/linux-x64/FSharp.Core.dll",
+        "tools/net10.0/linux-x64/FSharp.DependencyManager.Nuget.dll",
+        "tools/net10.0/linux-x64/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tools/net10.0/linux-x64/Mono.Cecil.Mdb.dll",
+        "tools/net10.0/linux-x64/Mono.Cecil.Pdb.dll",
+        "tools/net10.0/linux-x64/Mono.Cecil.Rocks.dll",
+        "tools/net10.0/linux-x64/Mono.Cecil.dll",
+        "tools/net10.0/linux-x64/NLog.config",
+        "tools/net10.0/linux-x64/NLog.dll",
+        "tools/net10.0/linux-x64/System.CodeDom.dll",
+        "tools/net10.0/linux-x64/System.Configuration.ConfigurationManager.dll",
+        "tools/net10.0/linux-x64/System.Diagnostics.EventLog.dll",
+        "tools/net10.0/linux-x64/System.Runtime.Caching.dll",
+        "tools/net10.0/linux-x64/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net10.0/linux-x64/WebSharper.Compiler.FSharp.dll",
+        "tools/net10.0/linux-x64/WebSharper.Compiler.dll",
+        "tools/net10.0/linux-x64/WebSharper.Core.JavaScript.dll",
+        "tools/net10.0/linux-x64/WebSharper.Core.dll",
+        "tools/net10.0/linux-x64/WebSharper.InterfaceGenerator.dll",
+        "tools/net10.0/linux-x64/WebSharper.Sitelets.Offline.dll",
+        "tools/net10.0/linux-x64/cs/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/cs/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/cs/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/de/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/de/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/de/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/default.win32manifest",
+        "tools/net10.0/linux-x64/es/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/es/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/es/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/fr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/fr/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/fr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/it/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/it/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/it/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/ja/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/ja/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/ja/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/ko/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/ko/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/ko/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/pl/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/pl/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/pl/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/pt-BR/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/pt-BR/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/pt-BR/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/ru/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/ru/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/ru/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/tr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/tr/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/tr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/wsfsc",
+        "tools/net10.0/linux-x64/wsfsc.dll",
+        "tools/net10.0/linux-x64/wsfsc.dll.config",
+        "tools/net10.0/linux-x64/wsfsc.runtimeconfig.json",
+        "tools/net10.0/linux-x64/wsfsc.sh",
+        "tools/net10.0/linux-x64/wsfscservice",
+        "tools/net10.0/linux-x64/wsfscservice.dll",
+        "tools/net10.0/linux-x64/wsfscservice.dll.config",
+        "tools/net10.0/linux-x64/wsfscservice.runtimeconfig.json",
+        "tools/net10.0/linux-x64/wsfscservice_start.sh",
+        "tools/net10.0/linux-x64/zh-Hans/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/zh-Hans/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/zh-Hans/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/linux-x64/zh-Hant/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/linux-x64/zh-Hant/FSharp.Core.resources.dll",
+        "tools/net10.0/linux-x64/zh-Hant/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/DiffPlex.dll",
+        "tools/net10.0/osx-x64/FSharp.Compiler.Service.dll",
+        "tools/net10.0/osx-x64/FSharp.Core.dll",
+        "tools/net10.0/osx-x64/FSharp.DependencyManager.Nuget.dll",
+        "tools/net10.0/osx-x64/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tools/net10.0/osx-x64/Mono.Cecil.Mdb.dll",
+        "tools/net10.0/osx-x64/Mono.Cecil.Pdb.dll",
+        "tools/net10.0/osx-x64/Mono.Cecil.Rocks.dll",
+        "tools/net10.0/osx-x64/Mono.Cecil.dll",
+        "tools/net10.0/osx-x64/NLog.config",
+        "tools/net10.0/osx-x64/NLog.dll",
+        "tools/net10.0/osx-x64/System.CodeDom.dll",
+        "tools/net10.0/osx-x64/System.Configuration.ConfigurationManager.dll",
+        "tools/net10.0/osx-x64/System.Diagnostics.EventLog.dll",
+        "tools/net10.0/osx-x64/System.Runtime.Caching.dll",
+        "tools/net10.0/osx-x64/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net10.0/osx-x64/WebSharper.Compiler.FSharp.dll",
+        "tools/net10.0/osx-x64/WebSharper.Compiler.dll",
+        "tools/net10.0/osx-x64/WebSharper.Core.JavaScript.dll",
+        "tools/net10.0/osx-x64/WebSharper.Core.dll",
+        "tools/net10.0/osx-x64/WebSharper.InterfaceGenerator.dll",
+        "tools/net10.0/osx-x64/WebSharper.Sitelets.Offline.dll",
+        "tools/net10.0/osx-x64/cs/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/cs/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/cs/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/de/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/de/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/de/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/default.win32manifest",
+        "tools/net10.0/osx-x64/es/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/es/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/es/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/fr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/fr/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/fr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/it/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/it/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/it/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/ja/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/ja/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/ja/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/ko/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/ko/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/ko/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/pl/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/pl/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/pl/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/pt-BR/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/pt-BR/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/pt-BR/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/ru/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/ru/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/ru/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/tr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/tr/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/tr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/wsfsc",
+        "tools/net10.0/osx-x64/wsfsc.dll",
+        "tools/net10.0/osx-x64/wsfsc.dll.config",
+        "tools/net10.0/osx-x64/wsfsc.runtimeconfig.json",
+        "tools/net10.0/osx-x64/wsfsc.sh",
+        "tools/net10.0/osx-x64/wsfscservice",
+        "tools/net10.0/osx-x64/wsfscservice.dll",
+        "tools/net10.0/osx-x64/wsfscservice.dll.config",
+        "tools/net10.0/osx-x64/wsfscservice.runtimeconfig.json",
+        "tools/net10.0/osx-x64/wsfscservice_start.sh",
+        "tools/net10.0/osx-x64/zh-Hans/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/zh-Hans/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/zh-Hans/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/osx-x64/zh-Hant/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/osx-x64/zh-Hant/FSharp.Core.resources.dll",
+        "tools/net10.0/osx-x64/zh-Hant/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/pl/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/pl/FSharp.Core.resources.dll",
+        "tools/net10.0/pl/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/pt-BR/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/pt-BR/FSharp.Core.resources.dll",
+        "tools/net10.0/pt-BR/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/ru/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/ru/FSharp.Core.resources.dll",
+        "tools/net10.0/ru/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/runtimes/win/lib/net10.0/System.Diagnostics.EventLog.Messages.dll",
+        "tools/net10.0/runtimes/win/lib/net10.0/System.Diagnostics.EventLog.dll",
+        "tools/net10.0/runtimes/win/lib/net10.0/System.Runtime.Caching.dll",
+        "tools/net10.0/tr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/tr/FSharp.Core.resources.dll",
+        "tools/net10.0/tr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/DiffPlex.dll",
+        "tools/net10.0/win-x64/FSharp.Compiler.Service.dll",
+        "tools/net10.0/win-x64/FSharp.Core.dll",
+        "tools/net10.0/win-x64/FSharp.DependencyManager.Nuget.dll",
+        "tools/net10.0/win-x64/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tools/net10.0/win-x64/Mono.Cecil.Mdb.dll",
+        "tools/net10.0/win-x64/Mono.Cecil.Pdb.dll",
+        "tools/net10.0/win-x64/Mono.Cecil.Rocks.dll",
+        "tools/net10.0/win-x64/Mono.Cecil.dll",
+        "tools/net10.0/win-x64/NLog.config",
+        "tools/net10.0/win-x64/NLog.dll",
+        "tools/net10.0/win-x64/System.CodeDom.dll",
+        "tools/net10.0/win-x64/System.Configuration.ConfigurationManager.dll",
+        "tools/net10.0/win-x64/System.Diagnostics.EventLog.Messages.dll",
+        "tools/net10.0/win-x64/System.Diagnostics.EventLog.dll",
+        "tools/net10.0/win-x64/System.Runtime.Caching.dll",
+        "tools/net10.0/win-x64/System.Security.Cryptography.ProtectedData.dll",
+        "tools/net10.0/win-x64/WebSharper.Compiler.FSharp.dll",
+        "tools/net10.0/win-x64/WebSharper.Compiler.dll",
+        "tools/net10.0/win-x64/WebSharper.Core.JavaScript.dll",
+        "tools/net10.0/win-x64/WebSharper.Core.dll",
+        "tools/net10.0/win-x64/WebSharper.InterfaceGenerator.dll",
+        "tools/net10.0/win-x64/WebSharper.Sitelets.Offline.dll",
+        "tools/net10.0/win-x64/cs/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/cs/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/cs/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/de/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/de/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/de/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/default.win32manifest",
+        "tools/net10.0/win-x64/es/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/es/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/es/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/fr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/fr/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/fr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/it/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/it/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/it/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/ja/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/ja/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/ja/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/ko/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/ko/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/ko/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/pl/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/pl/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/pl/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/pt-BR/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/pt-BR/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/pt-BR/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/ru/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/ru/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/ru/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/tr/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/tr/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/tr/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/wsfsc.dll",
+        "tools/net10.0/win-x64/wsfsc.dll.config",
+        "tools/net10.0/win-x64/wsfsc.exe",
+        "tools/net10.0/win-x64/wsfsc.runtimeconfig.json",
+        "tools/net10.0/win-x64/wsfscservice.dll",
+        "tools/net10.0/win-x64/wsfscservice.dll.config",
+        "tools/net10.0/win-x64/wsfscservice.exe",
+        "tools/net10.0/win-x64/wsfscservice.runtimeconfig.json",
+        "tools/net10.0/win-x64/wsfscservice_start.cmd",
+        "tools/net10.0/win-x64/zh-Hans/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/zh-Hans/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/zh-Hans/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/win-x64/zh-Hant/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/win-x64/zh-Hant/FSharp.Core.resources.dll",
+        "tools/net10.0/win-x64/zh-Hant/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/wsfsc.cmd",
+        "tools/net10.0/wsfsc.dll",
+        "tools/net10.0/wsfsc.dll.config",
+        "tools/net10.0/wsfsc.runtimeconfig.json",
+        "tools/net10.0/wsfsc.sh",
+        "tools/net10.0/wsfscservice.dll",
+        "tools/net10.0/zh-Hans/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/zh-Hans/FSharp.Core.resources.dll",
+        "tools/net10.0/zh-Hans/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/net10.0/zh-Hant/FSharp.Compiler.Service.resources.dll",
+        "tools/net10.0/zh-Hant/FSharp.Core.resources.dll",
+        "tools/net10.0/zh-Hant/FSharp.DependencyManager.Nuget.resources.dll",
+        "tools/netstandard2.0/WebSharper.MSBuild.FSharp.dll",
+        "websharper.fsharp.10.1.0.667.nupkg.sha512",
+        "websharper.fsharp.nuspec"
+      ]
+    },
+    "WebSharper.UI/10.1.0.667": {
+      "sha512": "AZTnz0hWTrbuYaWpYwz0su3UgmHh9JSlWH9QIocxbDN5k/zi2K547MDL+GU+JpWV7rw88smq8fhdshj8s4m2zg==",
+      "type": "package",
+      "path": "websharper.ui/10.1.0.667",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/WebSharper.UI.Templating.Common.dll",
+        "lib/netstandard2.0/WebSharper.UI.Templating.Common.xml",
+        "lib/netstandard2.0/WebSharper.UI.Templating.Runtime.dll",
+        "lib/netstandard2.0/WebSharper.UI.Templating.Runtime.xml",
+        "lib/netstandard2.0/WebSharper.UI.dll",
+        "lib/netstandard2.0/WebSharper.UI.xml",
+        "typeproviders/fsharp41/netstandard2.0/HtmlAgilityPack.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.Core.JavaScript.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.Core.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.InterfaceGenerator.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.JavaScript.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.Sitelets.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.StdLib.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.UI.Templating.Common.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.UI.Templating.Common.xml",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.UI.Templating.DesignTime.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.UI.Templating.DesignTime.xml",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.UI.dll",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.UI.xml",
+        "typeproviders/fsharp41/netstandard2.0/WebSharper.Web.dll",
+        "websharper.ui.10.1.0.667.nupkg.sha512",
+        "websharper.ui.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "FSharp.Core >= 10.0.101",
+      "WebSharper >= 10.1.0.667",
+      "WebSharper.AspNetCore >= 10.1.0.667",
+      "WebSharper.FSharp >= 10.1.0.667",
+      "WebSharper.UI >= 10.1.0.667"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\krisk\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\krisk\\source\\repos\\Pillon97\\FK4BOP\\Alpha\\Alpha.fsproj",
+      "projectName": "Alpha",
+      "projectPath": "C:\\Users\\krisk\\source\\repos\\Pillon97\\FK4BOP\\Alpha\\Alpha.fsproj",
+      "packagesPath": "C:\\Users\\krisk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\krisk\\source\\repos\\Pillon97\\FK4BOP\\Alpha\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\krisk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\10.0.101\\FSharp\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "FSharp.Core": {
+            "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+            "target": "Package",
+            "version": "[10.0.101, )",
+            "generatePathProperty": true
+          },
+          "WebSharper": {
+            "target": "Package",
+            "version": "[10.1.0.667, )",
+            "generatePathProperty": true
+          },
+          "WebSharper.AspNetCore": {
+            "target": "Package",
+            "version": "[10.1.0.667, )",
+            "generatePathProperty": true
+          },
+          "WebSharper.FSharp": {
+            "target": "Package",
+            "version": "[10.1.0.667, )",
+            "generatePathProperty": true
+          },
+          "WebSharper.UI": {
+            "target": "Package",
+            "version": "[10.1.0.667, )",
+            "generatePathProperty": true
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
