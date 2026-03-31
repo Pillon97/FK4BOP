@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "FSharp.Core/10.0.101": {
+      "FSharp.Core/10.1.201": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/FSharp.Core.dll": {
@@ -202,15 +202,15 @@
     }
   },
   "libraries": {
-    "FSharp.Core/10.0.101": {
-      "sha512": "mrS3J7cLtvXM3u3CmiaFq8oyBdlevzZY1VAAAbFk1gUDQtDEjUOybN5XpQglx5wAgJ0wLdDl6OSSfS7ZDFNcpA==",
+    "FSharp.Core/10.1.201": {
+      "sha512": "s5w9LWYurZ9yZdIppoIaYLkRadyT5s3u0wbQCb0J4bQd3ubIlIWQ3Nd5+ll1y3pv5OnTS373dP8T1S/BP46QXg==",
       "type": "package",
-      "path": "fsharp.core/10.0.101",
+      "path": "fsharp.core/10.1.201",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.10.0.101.nupkg.sha512",
+        "fsharp.core.10.1.201.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -843,7 +843,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "FSharp.Core >= 10.0.101",
+      "FSharp.Core >= 10.1.201",
       "WebSharper >= 10.1.0.667",
       "WebSharper.AspNetCore >= 10.1.0.667",
       "WebSharper.FSharp >= 10.1.0.667",
@@ -877,7 +877,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Program Files\\dotnet\\sdk\\10.0.101\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\10.0.201\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -891,7 +891,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -900,7 +900,7 @@
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[10.0.101, )",
+            "version": "[10.1.201, )",
             "generatePathProperty": true
           },
           "WebSharper": {
@@ -943,7 +943,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

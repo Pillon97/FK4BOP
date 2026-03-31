@@ -5,6 +5,7 @@ open WebSharper.Sitelets
 open WebSharper.UI
 open WebSharper.UI.Server
 open WebSharper.UI.Html
+open WebSharper.UI.Client
 
 module Site =
 
@@ -69,17 +70,9 @@ module Site =
         let generate () =
             removeClues (generateFull ())
     
-        let boardToString (board: int[,]) =
-            System.String [| for r in 0..8 do for c in 0..8 -> char (int '0' + board.[r, c]) |]
-    
-        let boardFromString (s: string) =
-            let board = Array2D.zeroCreate<int> 9 9
-            for i in 0 .. 80 do
-                board.[i / 9, i % 9] <- int s.[i] - int '0'
-            board
-    
     // ── CSS ──────────────────────────────────────────────────────────────────────
     
+    [<JavaScript>]
     module Styles =
         let page      = "font-family:'Segoe UI',sans-serif;background:#f0f4f8;min-height:100vh;margin:0;padding:0;"
         let header    = "background:#2d3a8c;color:white;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;"
@@ -91,7 +84,6 @@ module Site =
         let h2s       = "color:#2d3a8c;margin-top:0;"
         let footer    = "text-align:center;color:#90a4ae;padding:24px;font-size:0.9rem;"
         
-        // Új CSS a Sudoku táblához
         let sudokuTable = "border-collapse:collapse;margin:24px auto;border:3px solid #2d3a8c;background:#fff;"
         let sudokuCell  = "width:45px;height:45px;text-align:center;font-size:1.4rem;border:1px solid #ccd1d9;padding:0;"
         let sudokuCellRightThick = sudokuCell + "border-right:3px solid #2d3a8c;"
@@ -100,7 +92,94 @@ module Site =
         let sudokuInput = "width:100%;height:100%;border:none;text-align:center;font-size:1.4rem;color:#2d3a8c;background:#e8eaf6;outline:none;font-weight:bold;padding:0;box-sizing:border-box;"
         let sudokuText  = "display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-weight:bold;color:#333;"
 
-    // ── View ─────────────────────────────────────────────────────────────────────
+        let globalCss = "
+            .sudoku-err { background-color: #ffcccc !important; }
+            .sudoku-err input { background-color: #ffcccc !important; color: #d32f2f !important; }
+            .sudoku-err span { color: #d32f2f !important; }
+        "
+
+    // ── Kliens oldali logika (Interaktív játéktér) ───────────────────────────────
+
+    [<JavaScript>]
+    module Client =
+        // Egydimenziós (lapos) tömböt használunk az indexeléshez, így nem fagy ki a JavaScript.
+        let hasConflict (idx: int) (boardState: string[]) =
+            let v = boardState.[idx]
+            if System.String.IsNullOrWhiteSpace(v) then false
+            else
+                let r = idx / 9
+                let c = idx % 9
+                let mutable conflict = false
+                
+                // Sor ellenőrzés
+                for cc in 0..8 do
+                    let i = r * 9 + cc
+                    if i <> idx && boardState.[i] = v then conflict <- true
+                // Oszlop ellenőrzés
+                for rr in 0..8 do
+                    let i = rr * 9 + c
+                    if i <> idx && boardState.[i] = v then conflict <- true
+                // 3x3-as doboz ellenőrzés
+                let br = (r / 3) * 3
+                let bc = (c / 3) * 3
+                for rr in br .. br+2 do
+                    for cc in bc .. bc+2 do
+                        let i = rr * 9 + cc
+                        if i <> idx && boardState.[i] = v then conflict <- true
+                
+                conflict
+
+        let renderInteractiveBoard (flatBoard: int[]) =
+            // Létrehozunk 81 reaktív változót egy sima egydimenziós tömbben
+            let vars = 
+                flatBoard |> Array.map (fun v -> 
+                    Var.Create (if v = 0 then "" else string v)
+                )
+
+            // Összefűzzük őket egyetlen 'View'-ba, ami azonnal jelez, ha BÁRMI változik
+            let allVarsView = 
+                vars 
+                |> Array.map (fun v -> v.View)
+                |> View.Sequence
+                |> View.Map Seq.toArray
+
+            table [attr.style Styles.sudokuTable] [
+                for r in 0 .. 8 do
+                    tr [] [
+                        for c in 0 .. 8 do
+                            let idx = r * 9 + c
+                            let rightThick = (c = 2 || c = 5)
+                            let bottomThick = (r = 2 || r = 5)
+                            
+                            let cellStyle =
+                                match rightThick, bottomThick with
+                                | true, true  -> Styles.sudokuCellBothThick
+                                | true, false -> Styles.sudokuCellRightThick
+                                | false, true -> Styles.sudokuCellBottomThick
+                                | false, false -> Styles.sudokuCell
+                            
+                            let isInitial = flatBoard.[idx] <> 0
+                            
+                            // Reakció: ha ütközés van a "lapos" tömbben, jelezzük
+                            let dynClass =
+                                allVarsView |> View.Map (fun currentBoard ->
+                                    if hasConflict idx currentBoard then "sudoku-err" else ""
+                                )
+                            
+                            let cellContent =
+                                if isInitial then
+                                    span [attr.style Styles.sudokuText] [text (string flatBoard.[idx])]
+                                else
+                                    Doc.InputType.Text [
+                                        attr.maxlength "1"
+                                        attr.style Styles.sudokuInput
+                                    ] vars.[idx]
+
+                            td [attr.style cellStyle; attr.classDyn dynClass] [cellContent]
+                    ]
+            ]
+
+    // ── View (Szerver oldali felület) ────────────────────────────────────────────
     
     module View =
     
@@ -108,6 +187,8 @@ module Site =
             Content.Page(
                 Title = "Sudoku – " + pageTitle,
                 Body = [
+                    Doc.Verbatim ("<style>\n" + Styles.globalCss + "\n</style>")
+
                     div [attr.style Styles.page] [
                         header [attr.style Styles.header] [
                             h1 [attr.style Styles.titleS] [text "🔢 Sudoku"]
@@ -123,45 +204,19 @@ module Site =
                     ]
                 ]
             )
-            
-        // Segédfüggvény a tábla kirajzolásához
-        let renderBoard (board: int[,]) =
-            table [attr.style Styles.sudokuTable] [
-                for r in 0 .. 8 do
-                    tr [] [
-                        for c in 0 .. 8 do
-                            // A 3x3-as blokkok vonalainak vastagítása
-                            let rightThick = (c = 2 || c = 5)
-                            let bottomThick = (r = 2 || r = 5)
-                            
-                            let cellStyle =
-                                match rightThick, bottomThick with
-                                | true, true  -> Styles.sudokuCellBothThick
-                                | true, false -> Styles.sudokuCellRightThick
-                                | false, true -> Styles.sudokuCellBottomThick
-                                | false, false -> Styles.sudokuCell
-                            
-                            // Ha az érték 0, egy input mezőt adunk, ha nem, kiírjuk a számot
-                            let cellContent =
-                                if board.[r, c] = 0 then
-                                    input [
-                                        attr.name "type"; attr.value ""
-                                        attr.maxlength "1"
-                                        attr.style Styles.sudokuInput
-                                    ] []
-                                else
-                                    span [attr.style Styles.sudokuText] [text (string board.[r, c])]
-                            
-                            td [attr.style cellStyle] [cellContent]
-                    ]
-            ]
     
         let homePage ctx =
             let board = Sudoku.generate ()
+            
+            // TITKOS FEGYVER: A 9x9-es táblát 1 dimenzióssá lapítjuk (81 elem hosszú lesz).
+            // Az int[] formátumot a JavaScript sosem értelmezi félre!
+            let flatBoard = [| for r in 0..8 do for c in 0..8 -> board.[r, c] |]
+
             layout ctx "Játék" (
                 div [attr.style Styles.card] [
                     h2 [attr.style Styles.h2s] [text "Jó játékot!"]
-                    renderBoard board // Itt hívjuk meg a táblagenerálót!
+                    
+                    ClientServer.client (Client.renderInteractiveBoard flatBoard)
                 ]
             )
     
@@ -169,7 +224,7 @@ module Site =
             layout ctx "Rólunk" (
                 div [attr.style Styles.card] [
                     h2 [attr.style Styles.h2s] [text "Rólunk"]
-                    p [] [text "Ez egy automatikusan generálódó Sudoku játék."]
+                    p [] [text "Ez egy automatikusan generálódó, WebSharper UI-alapú reaktív Sudoku játék."]
                 ]
             )
             
