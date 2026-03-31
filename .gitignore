@@ -1,1 +1,60 @@
+# ─────────────────────────────
+# .NET / F#
+# ─────────────────────────────
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+*.fsproj.user
+
+# WebSharper logs
+*.log
+websharper.log
+
+# Rider / VS / VSCode
 .vs/
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# ─────────────────────────────
+# WebSharper (GENERÁLT fájlok)
+# ─────────────────────────────
+wwwroot/
+Scripts/WebSharper/
+*.ws.js
+*.ws.min.js
+
+# Ha van output mappa:
+dist/
+build/
+
+# ─────────────────────────────
+# Node / Vite / Frontend
+# ─────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite cache
+.vite/
+.cache/
+
+# ─────────────────────────────
+# OS fájlok
+# ─────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─────────────────────────────
+# Secrets (nagyon fontos!)
+# ─────────────────────────────
+appsettings.*.json
+!appsettings.json
+.env
