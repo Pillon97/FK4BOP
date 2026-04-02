@@ -27,7 +27,7 @@ let main args =
 
     app.UseHttpsRedirection()
 #if DEBUG        
-        .UseWebSharperScriptRedirect(startVite = true)
+        .UseWebSharperScriptRedirect(startVite = false)
 #endif
         .UseAuthentication()
         .UseStaticFiles()
