@@ -21,6 +21,6 @@ To run this project, you will need the .NET SDK and the WebSharper templates ins
 
 ## Screenshots
 <!-- Add screenshot(s) of your application here -->
-![GitHub Contributions](https://github-readme-streak-stats.herokuapp.com/?user=FELHASZNALONEVED)
+![GitHub Contributions](https://github-readme-streak-stats.herokuapp.com/?user=Pillon97)
 ## Try-Live Link
 <!-- Add a try-live link to your deployed application here -->
