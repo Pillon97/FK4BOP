@@ -8,14 +8,14 @@ open WebSharper.UI.Html
 
 module Site =
 
-    // ── Endpoints ────────────────────────────────────────────────────────────────
+
     
     type EndPoint =
         | [<EndPoint "GET /">] Home
         | [<EndPoint "GET /game">] Game
         | [<EndPoint "GET /about">] About
 
-    // ── Sudoku Logic ────────────────────────────────────────────────────────────
+
     
     module Sudoku =
 
@@ -112,47 +112,50 @@ module Site =
 
             board
 
-    // ── CSS ──────────────────────────────────────────────────────────────────────
+
     
     module Styles =
         let page =
-            "font-family:'Segoe UI',sans-serif;background:#f0f4f8;min-height:100vh;margin:0;padding:0;"
+            "font-family: 'Inter', system-ui, -apple-system, sans-serif; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); min-height: 100vh; margin: 0; padding: 0; color: #1f2937;"
 
         let header =
-            "background:#2d3a8c;color:white;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;"
+            "background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); color: #111827; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);"
 
-        let titleS = "margin:0;font-size:1.8rem;letter-spacing:2px;"
-        let nav = "display:flex;gap:16px;"
-        let navLink = "color:#aec6ff;text-decoration:none;font-size:1rem;"
-        let mainS = "max-width:700px;margin:40px auto;padding:0 16px;text-align:center;"
-        let card = "background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);padding:32px;margin-bottom:24px;display:inline-block;"
-        let h2s = "color:#2d3a8c;margin-top:0;"
-        let footer = "text-align:center;color:#90a4ae;padding:24px;font-size:0.9rem;"
-        let button = "display:inline-block;background:#2d3a8c;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:1.2rem;font-weight:bold;margin-top:20px;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:background 0.3s;"
+        let titleS = "margin: 0; font-size: 1.75rem; font-weight: 800; background: linear-gradient(to right, #4f46e5, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+        let nav = "display: flex; gap: 24px;"
+        let navLink = "color: #4b5563; text-decoration: none; font-size: 1rem; font-weight: 500; transition: color 0.2s;"
+        let mainS = "max-width: 800px; margin: 60px auto; padding: 0 20px; text-align: center; display: flex; flex-direction: column; align-items: center;"
+        
+        let card = "background: white; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); padding: 48px; margin-bottom: 32px; display: inline-block; width: 100%; max-width: 600px; border: 1px solid rgba(255,255,255,0.5); box-sizing: border-box;"
+        
+        let h2s = "color: #111827; margin-top: 0; font-size: 2rem; font-weight: 700; margin-bottom: 16px;"
+        let footer = "text-align: center; color: #6b7280; padding: 32px; font-size: 0.95rem;"
+        
+        let button = "display: inline-block; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: white; padding: 14px 32px; border-radius: 9999px; text-decoration: none; font-size: 1.1rem; font-weight: 600; margin-top: 24px; box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3); transition: transform 0.2s, box-shadow 0.2s;"
 
-        // Sudoku CSS
+
         let sudokuTable =
-            "border-collapse:collapse;margin:24px auto;border:3px solid #2d3a8c;background:#fff;"
+            "border-collapse: collapse; margin: 32px auto; border: 4px solid #374151; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"
 
         let sudokuCell =
-            "width:45px;height:45px;text-align:center;font-size:1.4rem;border:1px solid #ccd1d9;padding:0;"
+            "width: 50px; height: 50px; text-align: center; font-size: 1.5rem; border: 1px solid #d1d5db; padding: 0; transition: background 0.2s;"
 
         let sudokuCellRightThick =
-            sudokuCell + "border-right:3px solid #2d3a8c;"
+            sudokuCell + " border-right: 3px solid #374151;"
 
         let sudokuCellBottomThick =
-            sudokuCell + "border-bottom:3px solid #2d3a8c;"
+            sudokuCell + " border-bottom: 3px solid #374151;"
 
         let sudokuCellBothThick =
-            sudokuCell + "border-right:3px solid #2d3a8c;border-bottom:3px solid #2d3a8c;"
+            sudokuCell + " border-right: 3px solid #374151; border-bottom: 3px solid #374151;"
 
         let sudokuInput =
-            "width:100%;height:100%;border:none;text-align:center;font-size:1.4rem;color:#2d3a8c;background:#e8eaf6;outline:none;font-weight:bold;padding:0;box-sizing:border-box;"
+            "width: 100%; height: 100%; border: none; text-align: center; font-size: 1.5rem; color: #4f46e5; background: #f5f3ff; outline: none; font-weight: 700; padding: 0; box-sizing: border-box; transition: background 0.2s;"
 
         let sudokuText =
-            "display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-weight:bold;color:#333;"
+            "display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-weight: 700; color: #111827;"
 
-    // ── View ─────────────────────────────────────────────────────────────────────
+
     
     module View =
 
@@ -240,7 +243,7 @@ module Site =
                 ]
             )
 
-    // ── Entry ────────────────────────────────────────────────────────────────────
+
 
     [<Website>]
     let Main =
