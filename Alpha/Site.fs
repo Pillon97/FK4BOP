@@ -10,9 +10,14 @@ module Site =
 
 
     
+    type Difficulty = 
+        | [<EndPoint "easy">] Easy
+        | [<EndPoint "medium">] Medium
+        | [<EndPoint "hard">] Hard
+
     type EndPoint =
         | [<EndPoint "GET /">] Home
-        | [<EndPoint "GET /game">] Game
+        | [<EndPoint "GET /game">] Game of difficulty: option<Difficulty>
         | [<EndPoint "GET /about">] About
 
 
@@ -77,10 +82,9 @@ module Site =
             solve board |> ignore
             board
 
-        let removeClues (board: int[,]) =
+        let removeClues (board: int[,]) remove =
             let rng = System.Random()
             let puzzle = Array2D.copy board
-            let remove = 45
 
             let positions =
                 [| for r in 0..8 do
@@ -94,8 +98,14 @@ module Site =
 
             puzzle
 
-        let generate () =
-            removeClues (generateFull ())
+        let generate diff =
+            let cluesToRemove =
+                match diff with
+                | Some Easy -> 30
+                | Some Medium -> 45
+                | Some Hard -> 55
+                | None -> 45
+            removeClues (generateFull ()) cluesToRemove
 
         let boardToString (board: int[,]) =
             System.String [|
@@ -169,7 +179,7 @@ module Site =
 
                             nav [attr.style Styles.nav] [
                                 a [attr.href (ctx.Link Home); attr.style Styles.navLink] [text "Home"]
-                                a [attr.href (ctx.Link Game); attr.style Styles.navLink] [text "Game"]
+                                a [attr.href (ctx.Link (Game None)); attr.style Styles.navLink] [text "Game"]
                                 a [attr.href (ctx.Link About); attr.style Styles.navLink] [text "About Us"]
                             ]
                         ]
@@ -221,16 +231,30 @@ module Site =
                 div [attr.style Styles.card] [
                     h2 [attr.style Styles.h2s] [text "Welcome to Sudoku!"]
                     p [] [text "Ready to test your logic skills?"]
-                    a [attr.href (ctx.Link Game); attr.style Styles.button] [text "Start Game"]
+                    a [attr.href (ctx.Link (Game None)); attr.style Styles.button] [text "Start Game"]
                 ]
             )
 
-        let gamePage ctx =
-            let board = Sudoku.generate ()
+        let gamePage ctx diff =
+            let board = Sudoku.generate diff
+
+            let diffText =
+                match diff with
+                | Some Easy -> "Easy"
+                | Some Medium -> "Medium"
+                | Some Hard -> "Hard"
+                | None -> "Medium"
 
             layout ctx "Game" (
                 div [attr.style Styles.card] [
-                    h2 [attr.style Styles.h2s] [text "Enjoy the game!"]
+                    h2 [attr.style Styles.h2s] [text (sprintf "Enjoy the game! (%s)" diffText)]
+                    
+                    div [attr.style "margin-bottom: 20px; display: flex; gap: 10px; justify-content: center;"] [
+                        a [attr.href (ctx.Link (Game (Some Easy))); attr.style Styles.button] [text "Easy"]
+                        a [attr.href (ctx.Link (Game (Some Medium))); attr.style Styles.button] [text "Medium"]
+                        a [attr.href (ctx.Link (Game (Some Hard))); attr.style Styles.button] [text "Hard"]
+                    ]
+
                     renderBoard board
                 ]
             )
@@ -250,6 +274,6 @@ module Site =
         Application.MultiPage (fun (ctx: Context<EndPoint>) endpoint ->
             match endpoint with
             | Home -> View.homePage ctx
-            | Game -> View.gamePage ctx
+            | Game diff -> View.gamePage ctx diff
             | About -> View.aboutPage ctx
         )
