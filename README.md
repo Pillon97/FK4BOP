@@ -20,7 +20,9 @@ To run this project, you will need the .NET SDK and the WebSharper templates ins
 4. The application will be accessible via the localhost address indicated in your terminal.
 
 ## Screenshots
-<!-- Add screenshot(s) of your application here -->
+![alt text]"C:\Users\krisk\Pictures\Screenshots\Képernyőkép 2026-04-22 182812.png")
+![alt text](image.png)
+![alt text](image.png)
 ![GitHub Contribution Grid](https://ghchart.rshah.org/409ba5/Pillon97)
 ## Try-Live Link
 <!-- Add a try-live link to your deployed application here -->

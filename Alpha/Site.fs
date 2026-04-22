@@ -12,6 +12,7 @@ module Site =
     
     type EndPoint =
         | [<EndPoint "GET /">] Home
+        | [<EndPoint "GET /game">] Game
         | [<EndPoint "GET /about">] About
 
     // ── Sudoku Logic ────────────────────────────────────────────────────────────
@@ -127,6 +128,7 @@ module Site =
         let card = "background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);padding:32px;margin-bottom:24px;display:inline-block;"
         let h2s = "color:#2d3a8c;margin-top:0;"
         let footer = "text-align:center;color:#90a4ae;padding:24px;font-size:0.9rem;"
+        let button = "display:inline-block;background:#2d3a8c;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:1.2rem;font-weight:bold;margin-top:20px;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:background 0.3s;"
 
         // Sudoku CSS
         let sudokuTable =
@@ -163,7 +165,8 @@ module Site =
                             h1 [attr.style Styles.titleS] [text "🔢 Sudoku"]
 
                             nav [attr.style Styles.nav] [
-                                a [attr.href (ctx.Link Home); attr.style Styles.navLink] [text "Game"]
+                                a [attr.href (ctx.Link Home); attr.style Styles.navLink] [text "Home"]
+                                a [attr.href (ctx.Link Game); attr.style Styles.navLink] [text "Game"]
                                 a [attr.href (ctx.Link About); attr.style Styles.navLink] [text "About Us"]
                             ]
                         ]
@@ -211,6 +214,15 @@ module Site =
             ]
 
         let homePage ctx =
+            layout ctx "Home" (
+                div [attr.style Styles.card] [
+                    h2 [attr.style Styles.h2s] [text "Welcome to Sudoku!"]
+                    p [] [text "Ready to test your logic skills?"]
+                    a [attr.href (ctx.Link Game); attr.style Styles.button] [text "Start Game"]
+                ]
+            )
+
+        let gamePage ctx =
             let board = Sudoku.generate ()
 
             layout ctx "Game" (
@@ -235,5 +247,6 @@ module Site =
         Application.MultiPage (fun (ctx: Context<EndPoint>) endpoint ->
             match endpoint with
             | Home -> View.homePage ctx
+            | Game -> View.gamePage ctx
             | About -> View.aboutPage ctx
         )
