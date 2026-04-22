@@ -1,19 +1,26 @@
-Project-Alpha-FK4BOP
+# Project-Alpha-FK4BOP
 
-Student ID: FK4BOP
+**Student ID:** FK4BOP
 
-Project Description and Motivation
+## Project Description and Motivation
+<!-- Add a description of your project and its motivation here -->
 
-Applied Technologies
+## Applied Technologies
 The application is built using the F# programming language and the WebSharper framework.
-- Language: F#
-- Framework: WebSharper (used for full-stack web development).
-- Project Type: Web Application.
-- Complexity: Contains 300+ lines of original F# code (excluding     boilerplate, comments, and configuration).
+- **Language:** F#
+- **Framework:** WebSharper (used for full-stack web development).
+- **Project Type:** Web Application.
+- **Complexity:** Contains 300+ lines of original F# code (excluding boilerplate, comments, and configuration).
 
-How to Build and Run
+## How to Build and Run
 To run this project, you will need the .NET SDK and the WebSharper templates installed on your system.
 1. Clone this public repository.
 2. Open your terminal and navigate to the project's root directory.
-3. Execute the following commands: "dotnet run" 
+3. Execute the following command: `dotnet run` 
 4. The application will be accessible via the localhost address indicated in your terminal.
+
+## Screenshots
+<!-- Add screenshot(s) of your application here -->
+![GitHub Contributions](https://github-readme-streak-stats.herokuapp.com/?user=FELHASZNALONEVED)
+## Try-Live Link
+<!-- Add a try-live link to your deployed application here -->

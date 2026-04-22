@@ -1,4 +1,4 @@
-﻿namespace Alpha
+namespace Alpha
 
 open WebSharper
 open WebSharper.Sitelets
@@ -8,13 +8,13 @@ open WebSharper.UI.Html
 
 module Site =
 
-    // ── Végpontok ────────────────────────────────────────────────────────────────
+    // ── Endpoints ────────────────────────────────────────────────────────────────
     
     type EndPoint =
         | [<EndPoint "GET /">] Home
         | [<EndPoint "GET /about">] About
 
-    // ── Sudoku logika ────────────────────────────────────────────────────────────
+    // ── Sudoku Logic ────────────────────────────────────────────────────────────
     
     module Sudoku =
 
@@ -163,15 +163,15 @@ module Site =
                             h1 [attr.style Styles.titleS] [text "🔢 Sudoku"]
 
                             nav [attr.style Styles.nav] [
-                                a [attr.href (ctx.Link Home); attr.style Styles.navLink] [text "Játék"]
-                                a [attr.href (ctx.Link About); attr.style Styles.navLink] [text "Rólunk"]
+                                a [attr.href (ctx.Link Home); attr.style Styles.navLink] [text "Game"]
+                                a [attr.href (ctx.Link About); attr.style Styles.navLink] [text "About Us"]
                             ]
                         ]
 
                         div [attr.style Styles.mainS] [content]
 
                         footer [attr.style Styles.footer] [
-                            text "© 2025 Sudoku App – WebSharper F# projekt"
+                            text "© 2025 Sudoku App – WebSharper F# project"
                         ]
                     ]
                 ]
@@ -213,18 +213,18 @@ module Site =
         let homePage ctx =
             let board = Sudoku.generate ()
 
-            layout ctx "Játék" (
+            layout ctx "Game" (
                 div [attr.style Styles.card] [
-                    h2 [attr.style Styles.h2s] [text "Jó játékot!"]
+                    h2 [attr.style Styles.h2s] [text "Enjoy the game!"]
                     renderBoard board
                 ]
             )
 
         let aboutPage ctx =
-            layout ctx "Rólunk" (
+            layout ctx "About Us" (
                 div [attr.style Styles.card] [
-                    h2 [attr.style Styles.h2s] [text "Rólunk"]
-                    p [] [text "Ez egy automatikusan generálódó Sudoku játék."]
+                    h2 [attr.style Styles.h2s] [text "About Us"]
+                    p [] [text "This is an automatically generated Sudoku game."]
                 ]
             )
 
