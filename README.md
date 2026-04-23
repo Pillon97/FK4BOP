@@ -20,9 +20,8 @@ To run this project, you will need the .NET SDK and the WebSharper templates ins
 4. The application will be accessible via the localhost address indicated in your terminal.
 
 ## Screenshots
-![alt text]"C:\Users\krisk\Pictures\Screenshots\Képernyőkép 2026-04-22 182812.png")
-![alt text](image.png)
-![alt text](image.png)
+![image](https://github.com/Pillon97/FK4BOP/blob/main/images/K%C3%A9perny%C5%91k%C3%A9p%202026-04-22%20182812.png)
+
 ![GitHub Contribution Grid](https://ghchart.rshah.org/409ba5/Pillon97)
 ## Try-Live Link
 https://fk4bop-ddh7bybghrcjcwby.canadacentral-01.azurewebsites.net/game/None
