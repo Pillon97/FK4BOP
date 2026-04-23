@@ -25,4 +25,4 @@ To run this project, you will need the .NET SDK and the WebSharper templates ins
 ![alt text](image.png)
 ![GitHub Contribution Grid](https://ghchart.rshah.org/409ba5/Pillon97)
 ## Try-Live Link
-<!-- Add a try-live link to your deployed application here -->
+https://fk4bop-ddh7bybghrcjcwby.canadacentral-01.azurewebsites.net/game/None
