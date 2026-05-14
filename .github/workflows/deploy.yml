@@ -23,15 +23,16 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
-          cache: true
-          cache-dependency-path: '**/packages.lock.json'
+          dotnet-version: |
+            6.0.x
+            8.0.x
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: Omega/package-lock.json
 
       - name: Cache Fable build output
         uses: actions/cache@v4
@@ -47,9 +48,11 @@ jobs:
         run: dotnet tool restore
 
       - name: Install JS dependencies
+        working-directory: Omega
         run: npm ci || npm install
 
       - name: Build
+        working-directory: Omega
         run: npm run build
         env:
           NODE_OPTIONS: '--max-old-space-size=6144'
@@ -57,7 +60,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: Omega/dist
 
   deploy:
     needs: build
