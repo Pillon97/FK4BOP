@@ -50,4 +50,4 @@ To run this project, you will need the .NET SDK and Node.js installed on your sy
 5. The application will be accessible via the localhost address indicated in your terminal.
 ![GitHub Contribution Grid](https://ghchart.rshah.org/409ba5/Pillon97)
 ## Try-Live Link
-https://pillon97.github.io/Omega_FK4BOP/
+[https://pillon97.github.io/FK4BOP/](https://pillon97.github.io/FK4BOP/)
