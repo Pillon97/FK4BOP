@@ -1,0 +1,21 @@
+# dotnet / Fable
+bin/
+obj/
+.fable/
+*.fs.js
+*.fs.js.map
+
+# node
+node_modules/
+dist/
+.vite/
+
+# editor
+.vscode/
+.idea/
+*.user
+*.suo
+
+# os
+.DS_Store
+Thumbs.db
