@@ -48,6 +48,10 @@ To run this project, you will need the .NET SDK and Node.js installed on your sy
 3. Install the Node dependencies: `npm install`
 4. Start the development server: `npm start`
 5. The application will be accessible via the localhost address indicated in your terminal.
+## Screenshots
+![image](https://github.com/Pillon97/FK4BOP/blob/main/images/K%C3%A9perny%C5%91k%C3%A9p%202026-04-23%20192658.png)
+![image](https://github.com/Pillon97/FK4BOP/blob/main/images/K%C3%A9perny%C5%91k%C3%A9p%202026-04-23%20192729.png)
+
 ![GitHub Contribution Grid](https://ghchart.rshah.org/409ba5/Pillon97)
 ## Try-Live Link
 [https://pillon97.github.io/FK4BOP/](https://pillon97.github.io/FK4BOP/)
